@@ -101,10 +101,15 @@ if "personal_metrics" not in st.session_state:
 # 3. EPIC CLINICIAN COLOR THEMES ENGINE
 # ----------------------------------------------------
 EPIC_THEMES = {
-    "🟣 Amethyst Purple (Blackboard / Epic Amethyst)": {
+    "🟣 Amethyst Purple (Epic Amethyst)": {
         "bg": "#f1f5f9", "text": "#0f172a", "sidebar_bg": "#1e293b", "sidebar_text": "#f8fafc",
         "primary": "#502d7f", "primary_hover": "#3b1f60", "card_bg": "#ffffff", "card_border": "#e2e8f0",
         "accent_box": "#fafafa", "badge_bg": "#ede9fe", "badge_text": "#5b21b6"
+    },
+    "💜🖤 Amethyst & Black (Dark Amethyst)": {
+        "bg": "#09090b", "text": "#f4f4f5", "sidebar_bg": "#120d1a", "sidebar_text": "#e9d5ff",
+        "primary": "#7e22ce", "primary_hover": "#6b21a8", "card_bg": "#18181b", "card_border": "#7e22ce",
+        "accent_box": "#181028", "badge_bg": "#3b0764", "badge_text": "#e9d5ff"
     },
     "🖤💖 Black & Hot Pink (Cyber Night Shift)": {
         "bg": "#09090b", "text": "#f4f4f5", "sidebar_bg": "#18181b", "sidebar_text": "#f472b6",
