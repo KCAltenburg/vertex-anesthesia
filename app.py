@@ -909,10 +909,8 @@ def render_contextual_tutor(client, active_file_refs: list, context_id: str, con
 # ----------------------------------------------------
 with st.sidebar:
     st.header("🎨 Epic Clinician Theme & Persona")
-    selected_theme = st.selectbox(
-        "Workspace Color Theme (Epic Style):",
-        list(EPIC_THEMES.keys()),
-# Safe Theme Key Initialization & Selection
+
+    # Safe Theme Key Initialization & Selection
     if "user_preferences" not in st.session_state:
         st.session_state.user_preferences = {
             "theme": "Amethyst & Black (Dark Amethyst)",
@@ -942,6 +940,7 @@ with st.sidebar:
         index=list(PERSONA_PROMPTS.keys()).index(st.session_state.user_preferences.get("persona", "👑 Fierce Drag Queen Diva & Viral Meme Queen"))
     )
     st.session_state.user_preferences["persona"] = selected_persona
+      
 
     if selected_persona == "✍️ Custom Saved Personality":
         st.session_state.user_preferences["custom_persona_text"] = st.text_area(
