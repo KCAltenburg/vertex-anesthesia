@@ -839,7 +839,7 @@ def render_contextual_tutor(client, active_file_refs: list, context_id: str, con
 
                 try:
                     res = client.models.generate_content(
-                        model="gemini-2.5-pro",
+                        model="gemini-3.1-pro-preview",
                         contents=payload,
                         config=types.GenerateContentConfig(
                             system_instruction=build_molecular_animator_prompt(),
