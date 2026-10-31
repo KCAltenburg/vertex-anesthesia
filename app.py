@@ -912,7 +912,7 @@ with st.sidebar:
     selected_theme = st.selectbox(
         "Workspace Color Theme (Epic Style):",
         list(EPIC_THEMES.keys()),
-    # Safe Theme Key Initialization & Selection
+# Safe Theme Key Initialization & Selection
     if "user_preferences" not in st.session_state:
         st.session_state.user_preferences = {
             "theme": "Amethyst & Black (Dark Amethyst)",
