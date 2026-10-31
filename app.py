@@ -912,9 +912,17 @@ with st.sidebar:
     selected_theme = st.selectbox(
         "Workspace Color Theme (Epic Style):",
         list(EPIC_THEMES.keys()),
-        # Safe Theme Key Initialization & Selection
+    # Safe Theme Key Initialization & Selection
+    if "user_preferences" not in st.session_state:
+        st.session_state.user_preferences = {
+            "theme": "Amethyst & Black (Dark Amethyst)",
+            "voice": "Kore",
+            "persona": "👑 Fierce Drag Queen Diva & Viral Meme Queen",
+            "custom_persona_text": ""
+        }
+
     if "theme" not in st.session_state.user_preferences:
-        st.session_state.user_preferences["theme"] = "🟣 Amethyst Purple (Blackboard / Epic Amethyst)"
+        st.session_state.user_preferences["theme"] = "Amethyst & Black (Dark Amethyst)"
         
     current_theme_saved = st.session_state.user_preferences["theme"]
     available_themes = list(EPIC_THEMES.keys())
@@ -924,9 +932,6 @@ with st.sidebar:
         "Workspace Color Theme (Epic Style):",
         available_themes,
         index=theme_default_index
-    )
-    st.session_state.user_preferences["theme"] = selected_theme
-    apply_epic_theme(selected_theme)
     )
     st.session_state.user_preferences["theme"] = selected_theme
     apply_epic_theme(selected_theme)
