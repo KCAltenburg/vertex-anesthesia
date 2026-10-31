@@ -912,7 +912,21 @@ with st.sidebar:
     selected_theme = st.selectbox(
         "Workspace Color Theme (Epic Style):",
         list(EPIC_THEMES.keys()),
-        index=list(EPIC_THEMES.keys()).index(st.session_state.user_preferences.get("theme", "🟣 Amethyst Purple (Blackboard / Epic Amethyst)"))
+        # Safe Theme Key Initialization & Selection
+    if "theme" not in st.session_state.user_preferences:
+        st.session_state.user_preferences["theme"] = "🟣 Amethyst Purple (Blackboard / Epic Amethyst)"
+        
+    current_theme_saved = st.session_state.user_preferences["theme"]
+    available_themes = list(EPIC_THEMES.keys())
+    theme_default_index = available_themes.index(current_theme_saved) if current_theme_saved in available_themes else 0
+
+    selected_theme = st.selectbox(
+        "Workspace Color Theme (Epic Style):",
+        available_themes,
+        index=theme_default_index
+    )
+    st.session_state.user_preferences["theme"] = selected_theme
+    apply_epic_theme(selected_theme)
     )
     st.session_state.user_preferences["theme"] = selected_theme
     apply_epic_theme(selected_theme)
