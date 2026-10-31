@@ -139,7 +139,7 @@ EPIC_THEMES = {
 }
 
 def apply_epic_theme(theme_name: str):
-    t = EPIC_THEMES.get(theme_name, EPIC_THEMES["🟣 Amethyst Purple (Blackboard / Epic Amethyst)"])
+    t = EPIC_THEMES.get(theme_name, EPIC_THEMES["💜🖤 Amethyst & Black (Dark Amethyst)"])
     st.markdown(f"""
         <style>
             .stApp {{ background-color: {t['bg']}; color: {t['text']}; }}
