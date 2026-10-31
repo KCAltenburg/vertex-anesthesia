@@ -596,7 +596,7 @@ def synthesize_tutor_speech(client, text_to_speak: str, voice_name: str = "Kore"
                 )
             )
         audio_res = client.models.generate_content(
-            model="gemini-2.5-flash-preview-tts",
+            model="gemini-3.1-flash-tts-preview",
             contents=text_to_speak,
             config=types.GenerateContentConfig(
                 response_modalities=["AUDIO"],
@@ -1130,7 +1130,7 @@ def generate_structured_questions(client, file_refs: list, q_count: int, q_forma
     ]
     """
     res = client.models.generate_content(
-        model="gemini-2.5-pro",
+        model="gemini-3.1-pro-preview",
         contents=list(file_refs) + [prompt],
         config=types.GenerateContentConfig(response_mime_type="application/json", temperature=0.25)
     )
@@ -1628,7 +1628,7 @@ else:
                         - **🔥 Viral Meme / Pop-Culture Memory Hook**
                         """
                         res = client.models.generate_content(
-                            model="gemini-2.5-pro",
+                            model="gemini-3.1-pro-preview",
                             contents=all_active_refs + [img_part, photo_prompt]
                         )
                         st.session_state.photo_solver_result = res.text
@@ -1694,7 +1694,7 @@ else:
                 """
                 try:
                     res = client.models.generate_content(
-                        model="gemini-2.5-pro",
+                        model="gemini-3.1-pro-preview",
                         contents=all_active_refs + [tb_prompt],
                         config=types.GenerateContentConfig(response_mime_type="application/json", temperature=0.2)
                     )
@@ -1754,7 +1754,7 @@ else:
                     Use rich HTML highlights (`<mark style='background:#fef08a;padding:2px 6px;font-weight:bold;'>...`), colored bold spans, emojis, viral meme stories (like Kidz Bop Karen 'Calci-Calm-It-Down'), and exact `[Filename, Page/Slide X]` citations!
                     """
                     res = client.models.generate_content(
-                        model="gemini-2.5-pro",
+                        model="gemini-3.1-pro-preview",
                         contents=all_active_refs + [review_prompt],
                         config=types.GenerateContentConfig(temperature=0.2)
                     )
@@ -1937,7 +1937,7 @@ else:
                 """
                 try:
                     script_res = client.models.generate_content(
-                        model="gemini-2.5-pro",
+                        model="gemini-3.1-pro-preview",
                         contents=all_active_refs + [podcast_schema_prompt],
                         config=types.GenerateContentConfig(response_mime_type="application/json", temperature=0.3)
                     )
